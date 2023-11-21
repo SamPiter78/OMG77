@@ -1,0 +1,308 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    
+    padding: 0;
+    background-image: url('fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.fb-container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #b00000;  /* Rojo oscuro */
+    padding: 15px;
+    border-radius: 8px;
+}
+
+h1 {
+    color: #ffffff;  /* Blanco para mejor contraste con el rojo */
+    font-size: 32px;
+    flex: 1 0 100%;
+    flex: 1;
+}
+
+.login-form {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.login-form input {
+    margin-right: 5px;
+    padding: 5px 10px;
+    border: 2px solid #333;  /* Borde negro */
+    border-radius: 5px;
+}
+
+.login-form button {
+    background-color: #333;  /* Botón negro */
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.login-form button:hover, .login-form button:focus, .register-form button:hover, .register-form button:focus {
+    opacity: 0.9;
+}
+main {
+    margin-top: 20px;
+}
+
+.register-form {
+    margin-top: 20px;
+    border: 1px solid #b00000;  /* Borde rojo */
+    padding: 20px;
+    background-color: #f2f2f2;  /* Fondo gris claro */
+    border-radius: 8px;
+}
+
+.register-form input {
+    width: 100%;
+    margin: 5px 0;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 2px solid #b00000;  /* Borde rojo */
+    border-radius: 5px;
+    
+}
+.login-form button:hover, .login-form button:focus, .register-form button:hover, .register-form button:focus {
+    opacity: 0.9;
+}
+
+.register-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #b00000;  /* Botón rojo */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+body::before,
+body::after,
+.fb-container::before,
+.fb-container::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.7;
+    z-index: -1;
+    animation-duration: 50s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+body::before {
+    top: 10%;
+    left: 5%;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, #d04050, #b00000);
+    animation-name: float1;
+    background-image: url('planet1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+body::after {
+    bottom: 10%;
+    right: 5%;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, #4050d0, #0000b0);
+    animation-name: float2;
+    background-image: url('planet2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.fb-container::before {
+    top: 5%;
+    right: 10%;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, #40d050, #00b000);
+    animation-name: float3;
+    background-image: url('planet3.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.fb-container::after {
+    bottom: 5%;
+    left: 10%;
+    width: 140px;
+    height: 140px;
+    background: radial-gradient(circle, #d0d040, #b0b000);
+    animation-name: float4;
+    background-image: url('planet4.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@keyframes float1 {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes float2 {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(20px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes float3 {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes float4 {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(15px); }
+    100% { transform: translateY(0); }
+}
+
+
+/* Ajustes generales para pantallas más pequeñas */
+@media (max-width: 600px) {
+    .fb-container {
+        padding: 10px; /* Reducir el padding */
+    }
+
+    h1 {
+        font-size: 24px; /* Reducir el tamaño de fuente del logo */
+    }
+
+    .login-form input {
+        margin-right: 3px; /* Reducir el margen */
+        padding: 3px 5px; /* Reducir el padding */
+    }
+
+    .login-form button {
+        padding: 5px 8px; /* Reducir el padding del botón */
+    }
+
+    .register-form input, 
+    .register-form button {
+        margin: 3px 0; /* Reducir el margen */
+    }
+}
+
+/* Ajustes específicos para dispositivos como el iPhone 13 */
+@media (max-width: 390px) {
+    .login-form {
+        flex-direction: column; /* Apilar los elementos verticalmente */
+    }
+
+    .login-form input {
+        width: 100%; /* Hacer que los campos ocupen todo el ancho */
+        margin-bottom: 5px; /* Añadir un margen en la parte inferior */
+    }
+
+    .login-form button {
+        width: 100%; /* Hacer que el botón ocupe todo el ancho */
+    }
+}
+
+@media (max-width: 500px) {
+    header {
+        flex-direction: column; /* Alinear los elementos verticalmente */
+        align-items: center;
+        padding: 10px;
+    }
+
+    .login-form {
+        width: 100%; /* Ocupar todo el ancho disponible */
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+
+    .register-form {
+        margin-top: 15px; 
+        padding: 15px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .fb-container {
+        max-width: 1000px;
+    }
+}
+
+.login-form button:hover,
+.register-form button:hover {
+    opacity: 0.9; /* Ligero efecto de atenuación al pasar el cursor */
+}
+footer {
+
+    color: #1298f1; /* Color de texto claro */
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 14px;
+    }
+    
+    .footer-content {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    }
+    
+    .footer-nav {
+    display: flex;
+    gap: 20px; /* Espaciado entre los enlaces */
+    }
+    
+    .social-links {
+    display: flex;
+    gap: 10px; /* Espaciado entre los íconos de redes sociales */
+    }
+    
+    .social-links img {
+    width: 24px;
+    height: 24px;
+    transition: opacity 0.3s;
+    }
+    
+    .social-links img:hover {
+    opacity: 0.7;
+    }
+    
+    .footer-nav a {
+    color: #ffffff; /* Color de texto claro */
+    text-decoration: none;
+    transition: color 0.3s;
+    }
+    
+    .footer-nav a:hover {
+    color: #ffffff; /* Color blanco al pasar el mouse */
+    }
