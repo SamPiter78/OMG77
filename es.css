@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.animated-header {
+    background-color: #27770f;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    width: calc(100% - 40px);
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: top 0.3s, box-shadow 0.3s;
+    
+}
+
+.logo-container {
+    max-width: 100px; /* Ajusta el tamaño máximo del logo según tus necesidades */
+    border-radius: 50%; /* Bordes redondeados para el logo */
+}
+
+.logo-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.animated-header.show {
+    top: 0;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5); /* Aumenta la sombra al mostrar */
+}
+.product-section {
+    padding: 40px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin-top: 100px; /* Ajusta la distancia desde la parte superior del encabezado */
+}
+
+.product-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.product-item {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+    padding: 20px;
+    width: calc(33.33% - 30px); /* Ajusta el ancho para dispositivos móviles */
+    max-width: 300px; /* Ajusta el ancho máximo */
+    transition: transform 0.3s;
+}
+
+.product-item:hover {
+    transform: scale(1.05);
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Estilos adicionales para dispositivos móviles */
+@media screen and (max-width: 600px) {
+    .animated-header {
+        padding: 15px;
+        width: calc(100% - 30px);
+        margin: 15px;
+        border-radius: 0; /* Elimina los bordes redondeados en dispositivos móviles */
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Restaura la sombra en dispositivos móviles */
+    }
+
+    .logo-container {
+        margin-left: auto; /* Coloca el logo en la parte derecha en dispositivos móviles */
+        margin-right: 10px; /* Añade un pequeño espacio entre el texto y el logo */
+    }
+    @media only screen and (max-width: 600px) and (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (min-resolution: 240dpi) {
+        .animated-header {
+            border-radius: 20px; /* Ajusta el radio del borde para dispositivos Android */
+        }
+    }
+    .product-section {
+        margin-top: 80px;
+    }
+
+    .product-item {
+        width: calc(100% - 30px); /* Ajusta el ancho para dispositivos móviles */
+    }
+}
